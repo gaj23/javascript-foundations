@@ -1,6 +1,7 @@
 class Hobbit {
   constructor(hobbit) {
     this.name = hobbit.name;
+    this.favoriteFood = hobbit.favoriteFood;
     this.age = 0;
     this.adult = false;
     this.old = false;
@@ -22,7 +23,13 @@ class Hobbit {
     }
   }
 
-
+  offeredFood = (offer) => {
+    if (offer === this.favoriteFood) {
+      return `Why, ${offer}, thank you!`
+    } else {
+      return `${offer} is not my favorite, but thank you very much.`
+    }
+  }
 
 }
 

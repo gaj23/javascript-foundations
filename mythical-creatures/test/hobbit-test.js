@@ -82,5 +82,13 @@ describe('Hobbit', function() {
   });
 
   //new tests
-  it('should have a favorite food and always say\'s yes when offered it to eat')  
-});
+  it('should have a favorite food and always say\'s yes when offered it to eat', () => {
+    var hobbit = new Hobbit({ name: 'Jandar', favoriteFood: 'tarte du citrone' });
+
+    assert.equal(hobbit.favoriteFood, 'tarte du citrone')
+
+    assert.equal(hobbit.offeredFood('tarte du citrone'), 'Why, tarte du citrone, thank you!')
+
+    assert.equal(hobbit.offeredFood('Apple Pie'), 'Apple Pie is not my favorite, but thank you very much.')
+  });
+})
