@@ -3,7 +3,8 @@ class Pirate {
     this.name = name;
     this.job = job || 'scallywag';
     this.cursed = false;
-    this.booty = 0
+    this.booty = 0;
+    this.healthConditions = []
   }
 
   robShip = () => {
@@ -23,6 +24,16 @@ class Pirate {
       this.booty = this.booty - 300;
       this.cursed = false;
       return 'Your curse has been lifted!';
+    }
+  }
+
+  assessHealth = () => {
+    if (!this.healthConditions.length) {
+      this.healthy = true
+      return 'The sun has done you good! You\'re healthy.'
+    } else {
+      this.healthy = false;
+      return this.healthConditions
     }
   }
 }

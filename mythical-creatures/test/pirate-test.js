@@ -106,4 +106,25 @@ describe('Pirate', function() {
     assert.equal(pirate.booty, 100);
   })
 
+  // new tests
+  // health conditions: array
+
+  it('should evaluate health', function() {
+    var pirate = new Pirate('Ryan', 'first-mate');
+
+    assert.equal(pirate.assessHealth(), 'The sun has done you good! You\'re healthy.')
+
+    assert.equal(pirate.healthy, true)
+  })
+
+  it('should know what health conditions exist if not healthy', function() {
+    var pirate = new Pirate('Emily', 'stowaway');
+
+    pirate.healthConditions.push('scurvy')
+    pirate.healthConditions.push('sun poisioning')
+
+    assert.isArray(pirate.assessHealth(), ['scurvy', 'sun poisioning'])
+  })
+
+
 });
