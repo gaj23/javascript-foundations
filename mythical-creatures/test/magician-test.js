@@ -117,4 +117,14 @@ describe('Magician', function() {
   });
 
   // new tests: crowd happiness
+
+  it('should have a happy crowd unless they can\'t perform a trick', () => {
+    const magician = new Magician({ name: 'Scott', assistant: false });
+    
+    magician.performTrick()
+    assert.equal(magician.happyCrowd, true)
+
+    magician.performShowStopper();
+    assert.equal(magician.happyCrowd, false)
+  })
 });

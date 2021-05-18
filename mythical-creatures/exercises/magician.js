@@ -5,6 +5,7 @@ class Magician {
     this.favoriteAccessory = magic.clothing || 'top hat'
     this.confidencePercentage = 10
     this.assistant = false || magic.assistant
+    this.happyCrowd = true
   }
 
   performIncantation = magicWords => {
@@ -26,6 +27,7 @@ class Magician {
     if (this.confidencePercentage >= 100 && this.assistant === true) {
       return 'WOW! The magician totally just sawed that person in half!' }
     else {
+      this.happyCrowd = false
       return 'Oh no, this trick is not ready!'
     }
   }
