@@ -5,24 +5,24 @@ var Statue = require('../exercises/statue');
 
 describe('Medusa', function() {
 
-  it.skip('should be a function', function() {
+  it('should be a function', function() {
     assert.isFunction(Medusa);
   });
 
-  it.skip('should instantiate our good friend, Medusa', function() {
+  it('should instantiate our good friend, Medusa', function() {
     var medusa = new Medusa();
 
     assert.instanceOf(medusa, Medusa);
   });
 
-  it.skip('should have a name', function() {
-    // instantiate a Medusa object with your name as an argument
-    // instantiate another Medusa object with someone else's name as an argument
+  it('should have a name', function() {
+    var medusa1 = new Medusa({ name: 'Gabrielle' });
+    var medusa2 = new Medusa({ name: 'Paul' });
 
-    // assert that the first medusa's name is your name
-    // assert that the second medusa's name is the other name
+    console.log(medusa1.name)
 
-    //NOTE: We will not ask you to write your own tests in a mod 1 assessment, but it is good practice to prepare for mod 2!
+    assert.equal(medusa1.name, 'Gabrielle');
+    assert.equal(medusa2.name, 'Paul');
   });
 
   it.skip('should start with no statues', function() {
