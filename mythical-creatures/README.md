@@ -1,3 +1,5 @@
+`05/19/2020: this repo contains practice in TDD using Mocha/Chai and OOP with JavaScript classes and instantiation. It is periodically updated.`
+
 # Mythical Creatures
 
 ## Installation Steps
@@ -21,7 +23,7 @@ Run the command `npm test mythical-creatures/test/unicorn-test.js`. To run other
 - [x] `vampire`
 - [x] `hobbit`
 - [x] `pirate`
-- [ ] `magician`
+- [x] `magician`
 - [ ] `medusa`
 - [ ] `werewolf`
 - [ ] `centaur`
