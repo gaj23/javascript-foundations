@@ -2,10 +2,26 @@ var Person = require('./person');
 var Statue = require('./statue');
 
 class Medusa {
-  constructor(stone) {
-    this.name = stone.name === undefined ? 'Medusa' : stone.name
+  constructor({ name }) {
+    this.name = name
+    this.statues = []
   }
-  // this one was weird and I forget what it was weird; it had to do with the passing of an object into the constructor, though. 
+
+  gazeAtVictim = (victim) => {
+    const todaysVictim = new Statue(victim.name)
+    if (this.statues.length < 3) {
+      this.statues.push(todaysVictim)
+    } else {
+      let freedPerson = this.statues.shift()
+      freedPerson = new Person(freedPerson.name)
+      freedPerson.mood = 'relieved'
+
+      this.statues.push(todaysVictim)
+
+      return freedPerson
+    }
+  }
+
 }
 
 module.exports = Medusa;
