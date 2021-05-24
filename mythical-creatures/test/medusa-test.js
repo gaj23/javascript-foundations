@@ -9,17 +9,14 @@ describe('Medusa', function() {
     assert.isFunction(Medusa);
   });
 
-  it.skip('should instantiate our good friend, Medusa', function() {
+  it('should instantiate our good friend, Medusa', function() {
     var medusa = new Medusa();
-
-    console.log(medusa)
-
     assert.instanceOf(medusa, Medusa);
   });
 
   it('should have a name', function() {
-    var medusa1 = new Medusa({ name: 'Gabrielle' });
-    var medusa2 = new Medusa({ name: 'Paul' });
+    var medusa1 = new Medusa('Gabrielle');
+    var medusa2 = new Medusa('Paul');
 
     assert.equal(medusa1.name, 'Gabrielle');
     assert.equal(medusa2.name, 'Paul');
